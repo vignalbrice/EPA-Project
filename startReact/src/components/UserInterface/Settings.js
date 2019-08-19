@@ -8,11 +8,11 @@ import {
     FlatList,
     ActivityIndicator,
     ListItem,
-    TouchableOpacity
+    Button,
 } from 'react-native';
 import * as firebase from 'firebase'
 import Firebase from '../Firebase';
-export default class Profile extends React.Component {
+export default class Settings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,17 +31,14 @@ export default class Profile extends React.Component {
                 <View style={styles.contentContainer} >
                     <ScrollView
                         style={styles.container}>
-                        <Text style={{ textAlign:'center'}}>Dashboard</Text>
+                        <Text>Settings</Text>
                         <Text>
                             Bienvenue {currentUser && currentUser.email} !
                         </Text>
-                        <Text>
-                            Photo {currentUser && currentUser.photoURL}
-                        </Text>
-                        <Text>
-                            Token {currentUser && currentUser.uid} !
-                        </Text>
-                        <TouchableOpacity onPress={()=>this.props.navigation.navigate('ModifyProfile')} style={styles.buttonModifyProf}><Text>Modifier mon profil</Text></TouchableOpacity>
+                        <Button
+                            title="Sign out"
+                            onPress={() => firebase.auth().signOut()}
+                        />
                     </ScrollView>
                 </View>
             </KeyboardAvoidingView>
@@ -63,9 +60,5 @@ const styles = StyleSheet.create({
     },
     text: {
 
-    },
-    buttonModifyProf:{
-        padding:15,
-        backgroundColor:'#ecf0f1'
     }
 });

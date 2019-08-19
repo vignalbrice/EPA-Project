@@ -12,12 +12,18 @@ import {
 import {
     createStackNavigator,
     createBottomTabNavigator,
-    createAppContainer
-} from 'react-navigation';
+    createAppContainer,
+    createSwitchNavigator,
+    createDrawerNavigator } from 'react-navigation';
 import Login from '../components/Login/Login';
 import HomeScreen from '../components/HomeScreen';
 import Register from '../components/Login/Register';
 import Profile from '../components/UserInterface/Profile';
+import Loading from '../components/Loading';
+import Feed from'../components/UserInterface/Feed';
+import Settings from '../components/UserInterface/Settings';
+import ModifyProfile from '../components/UserInterface/ModifyProfile';
+
 
 
 
@@ -56,13 +62,15 @@ const transitionConfig = () => {
     }
 }
 
+
 const AppNavigator = createStackNavigator({
+    Loading : Loading,
     Home: HomeScreen,
     Register: Register,
     Login: Login,
-    Profile: Profile
+    ModifyProfile : ModifyProfile
 },{
-    initialRouteName: "Home",
+    initialRouteName: "Loading",
     transitionConfig,
         defaultNavigationOptions: (props) => {
             const { navigation } = props;
@@ -76,6 +84,12 @@ const AppNavigator = createStackNavigator({
         })
     }
 })
+/*const AppDrawerNavigator = createDrawerNavigator({
+    Dashboard: {
+        screen: UserInterfaceTabNavigator
+    }
+});*/
+
 
 const styles = StyleSheet.create({
     logo: {

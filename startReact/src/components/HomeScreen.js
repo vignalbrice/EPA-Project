@@ -7,9 +7,9 @@ export default class HomeScreen extends Component {
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
                 <View style={styles.container}>
                     <Image source={require('../img/kisspng-rocket.png')} style={styles.ImgBack} />
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')} style={styles.buttonContainer}><Text styles={styles.buttonText}>Connectez-vous</Text></TouchableOpacity>
-                    <Text styles={{color:"#FFF"}}>Ou</Text>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')} style={styles.buttonSubscribe}><Text styles={styles.buttonText}>S'inscrire</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')} style={styles.buttonContainer}><Text style={styles.buttonText}>Connectez-vous</Text></TouchableOpacity>
+                    <Text style={{color:"#FFF"}}>Ou</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')} style={styles.buttonSubscribe}><Text style={styles.buttonText}>S'inscrire</Text></TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
         );

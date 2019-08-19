@@ -18,10 +18,11 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/navigation/AppNavigator';
 import Firebase from'./src/components/Firebase';
-import firebase from'firebase';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCheckSquare, faCoffee, faHome } from '@fortawesome/free-solid-svg-icons'
+
 require('firebase/auth');
-import Profile from './src/components/UserInterface/Profile';
-import Login from './src/components/Login/Login';
+library.add(faCheckSquare, faCoffee, faHome);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,29 +30,13 @@ class App extends Component {
       isLoading: true,
       user: {}
     };
-    this._authListener = this._authListener.bind(this);
   }
-  _authListener = () => {
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        // User is signed in.
-        this.setState(state => ({ user }));
-        //localStorage.setItem('user', user.uid);
-        // ...
-      } else {
-        // User is signed out.
-        this.setState({ user: null });
-        //localStorage.removeItem('user');
-        // ...
-      }
 
-    });
-  }
   componentWillMount(){
     Firebase.init();
   }
   componentDidMount(){
-   // this._authListener();
+
   }
 
 render(){

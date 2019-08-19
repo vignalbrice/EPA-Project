@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, KeyboardAvoidingView, ScrollView,TextInput,TouchableOpacity } from 'react-native';
 import * as firebase from 'firebase';
+import Firebase from '../Firebase';
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: '',
-            user :{}
+            errorMessage: null
         }
     }
 
-    async _login() {
+    _login = () =>{
         const { email, password } = this.state;
-        const userData = this.state.user;
-        try{
-            await firebase.auth().signInWithEmailAndPassword(email, password).then(function (user){
-                console.log(user);
-                this.props.navigation.navigate('Profile');
-            });
-        }catch(e){
-            alert(e);
-        }
+        const navigation = this.props.navigation.navigate;
+        Firebase
+        .auth
+        .signInWithEmailAndPassword(email, password)
+        .then(() => navigation('Profile'))
+        .catch(error => this.setState({ errorMessage: error.message }))
     }
     render() {
         return (

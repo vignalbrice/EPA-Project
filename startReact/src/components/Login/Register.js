@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView, ScrollView, TextInput, TouchableOpacity, Image, Button } from 'react-native';
 import Firebase from '../Firebase';
 export default class Register extends Component {
       constructor(props) { 
@@ -41,8 +41,12 @@ export default class Register extends Component {
                             <TextInput style={styles.input} placeholder="Email" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" onChangeText={(email) => this.setState({ email })}/>
                             <TextInput style={styles.input} placeholder="Password" placeholderTextColor="rgba(255,255,255,0.7)" onChangeText={(password) => this.setState({ password })} secureTextEntry returnKeyType="go" />
                             <TouchableOpacity style={styles.buttonContainer} onPress={()=>this._register()}>
-                                <Text style={styles.buttonText}>Register</Text>
+                                <Text style={styles.buttonText}>S'inscrire</Text>
                             </TouchableOpacity>
+                            <Button
+                                title="Already have an account? Login"
+                                onPress={() => this.props.navigation.navigate('Login')}
+                            />
                         </View>
                     </ScrollView>
                 </View>
