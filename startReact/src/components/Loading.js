@@ -14,8 +14,8 @@ export default class Loading extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{color: 'white', fontSize:18}}>Chargement..</Text>
-                <ActivityIndicator size="large" color="#00ff00"/>
+                <Image source={require('../img/kisspng-rocket.png')} style={{width:200,height:200}}/>
+                <Text style={{color:'#FFF', fontSize:18}}>Innovation is the future..</Text>
             </View>
         )
     }

@@ -1,0 +1,1 @@
+[0921/122323.415:ERROR:file_io_win.cc(243)] SetEndOfFile: L’opération demandée n’a pu s’accomplir sur un fichier ayant une section mappée utilisateur ouverte. (0x4C8)

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "216815858395",
+    "firebase_url": "https://startreact-97b36.firebaseio.com",
+    "project_id": "startreact-97b36",
+    "storage_bucket": "startreact-97b36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216815858395:android:183bb0a69ef0e20a8952fe",
+        "android_client_info": {
+          "package_name": "com.startreact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216815858395-q39nl17mg2pr1kmj4iombktni5darak3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmohB8IQkMEmTYKHwLeaxSK1fpU-6Psj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216815858395-q39nl17mg2pr1kmj4iombktni5darak3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

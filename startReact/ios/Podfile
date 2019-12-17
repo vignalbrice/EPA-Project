@@ -28,6 +28,12 @@ target 'startReact' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
   target 'startReactTests' do
     inherit! :search_paths
     # Pods for testing

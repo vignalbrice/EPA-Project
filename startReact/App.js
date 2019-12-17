@@ -9,20 +9,16 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/navigation/AppNavigator';
 import Firebase from'./src/components/Firebase';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckSquare, faCoffee, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faHome, faPager } from '@fortawesome/free-solid-svg-icons'
+import { Provider } from 'react-redux'
+import Store from './src/store/configureStore'
 
 require('firebase/auth');
-library.add(faCheckSquare, faCoffee, faHome);
+library.add(faCheckSquare, faCoffee, faHome, faPager);
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -42,22 +38,20 @@ class App extends Component {
 render(){
 
     return (
-      <Fragment>
+      <Provider store={Store}>
         <AppNavigator />
-      </Fragment>
+      </Provider>
     );
   }
 }
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
   },
   engine: {
     position: 'absolute',
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
   },
   sectionContainer: {
     marginTop: 32,
@@ -66,19 +60,16 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: Colors.black,
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark,
   },
   highlight: {
     fontWeight: '700',
   },
   footer: {
-    color: Colors.dark,
     fontSize: 12,
     fontWeight: '600',
     padding: 4,

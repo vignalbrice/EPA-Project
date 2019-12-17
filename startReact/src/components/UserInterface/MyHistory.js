@@ -10,9 +10,9 @@ import {
     ListItem,
     Button,
 } from 'react-native';
-import * as firebase from 'firebase'
+
 import Firebase from '../Firebase';
-export default class Settings extends React.Component {
+export default class MyHistory extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,14 +31,7 @@ export default class Settings extends React.Component {
                 <View style={styles.contentContainer} >
                     <ScrollView
                         style={styles.container}>
-                        <Text>Settings</Text>
-                        <Text>
-                            Bienvenue {currentUser && currentUser.email} !
-                        </Text>
-                        <Button
-                            title="Sign out"
-                            onPress={() => firebase.auth().signOut()}
-                        />
+                       <Text style={{fontSize:16}}>Mon Historique</Text>
                     </ScrollView>
                 </View>
             </KeyboardAvoidingView>
@@ -58,7 +51,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         alignItems: 'center',
     },
-    text: {
-
+    btnlogout: {
+        marginTop:15
     }
 });

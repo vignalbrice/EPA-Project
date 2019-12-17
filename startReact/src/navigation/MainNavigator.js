@@ -21,9 +21,6 @@ import Register from '../components/Login/Register';
 import Profile from '../components/UserInterface/Profile';
 import Loading from '../components/Loading';
 import Feed from'../components/UserInterface/Feed';
-import Settings from '../components/UserInterface/Settings';
-import ModifyProfile from '../components/UserInterface/ModifyProfile';
-
 
 
 
@@ -67,8 +64,7 @@ const AppNavigator = createStackNavigator({
     Loading : Loading,
     Home: HomeScreen,
     Register: Register,
-    Login: Login,
-    ModifyProfile : ModifyProfile
+    Login: Login
 },{
     initialRouteName: "Loading",
     transitionConfig,
